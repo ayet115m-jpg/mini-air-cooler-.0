@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Air Cooler</title>
+
+<meta name="description" content="Mini Air Cooler - Stay Cool Anywhere with Mist & LED Light">
+<meta property="og:title" content="Mini Air Cooler">
+<meta property="og:description" content="Portable mini air cooler with USB, silent fan, and ice cooling system.">
+<meta property="og:image" content="images/mini-cooler.jpg">
+<meta property="og:url" content="https://yourdomain.com">
+
+<style>
+body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:white; text-align:center; }
+.container{padding:20px;}
+img{width:90%;max-width:300px;border-radius:10px;margin-bottom:15px;}
+.btn{background:#ef4444;padding:12px 25px;border:none;color:white;font-size:18px;border-radius:5px;cursor:pointer;transition:.3s;}
+.btn:hover{background:#dc2626;}
+.box{background:#1e293b;margin:10px auto;padding:15px;border-radius:10px;max-width:300px;}
+.review{background:#020617;margin:10px auto;padding:15px;border-radius:10px;max-width:300px;}
+.timer{font-size:24px;color:#facc15;margin:15px 0;}
+input,textarea{width:90%;padding:10px;margin:8px 0;border-radius:5px;border:none;}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<img src="images/mini-cooler.jpg" alt="Mini Cooler">
+
+<h1>সারার দিন ঠান্ডা থাকুন ❄️</h1>
+<p>Mini Air Cooler with Mist & LED Light</p>
+<button class="btn">Buy Now</button>
+
+<div class="timer" id="timer">⏳ Offer Ends In: 10:00</div>
+
+<div class="box">5 Nozzle Mist Cooling</div>
+<div class="box">Ice Cooling System</div>
+<div class="box">USB Powered</div>
+<div class="box">Silent Fan</div>
+
+<h2>⭐ Customer Reviews</h2>
+<div class="review">“খুব ঠান্ডা বাতাস দেয়! 😍”</div>
+<div class="review">“Small but powerful 💯”</div>
+<div class="review">“Worth every taka 🔥”</div>
+
+<h2>🛒 অর্ডার করুন</h2>
+<input type="text" id="name" placeholder="আপনার নাম">
+<input type="tel" id="phone" placeholder="ফোন নাম্বার">
+<textarea id="address" placeholder="ঠিকানা"></textarea>
+<button class="btn" onclick="order()">Confirm Order</button>
+
+</div>
+
+<script>
+var time=600;
+var timerInterval=setInterval(function(){
+  if(time<=0){ clearInterval(timerInterval); document.getElementById("timer").innerHTML="⏳ Offer Ended!"; return; }
+  var min=Math.floor(time/60),sec=time%60;
+  document.getElementById("timer").innerHTML="⏳ Offer Ends In: "+min+":"+(sec<10?"0"+sec:sec); time--;
+},1000);
+
+function order(){
+  var name=document.getElementById("name").value.trim();
+  var phone=document.getElementById("phone").value.trim();
+  var address=document.getElementById("address").value.trim();
+  if(name==""||phone==""||address==""){ alert("সব ফিল্ড পূরণ করুন!"); return; }
+  if(!/^\d{10,15}$/.test(phone)){ alert("সঠিক ফোন নাম্বার দিন!"); return; }
+  var msg="অর্ডার:%0Aনাম: "+name+"%0Aফোন: "+phone+"%0Aঠিকানা: "+address;
+  window.open("https://wa.me/880XXXXXXXXXX?text="+msg);
+}
+</script>
+
+</body>  
+</htm
